@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Html </title>
+    <style>
+        #myCanvas{
+            border: solid black;
+        }
+        #circle{
+            border: solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="200px" height="100px"></canvas>
+    <input type="button" value="DrawLine" onclick="drawLine()">
+
+    <canvas id="circle" width="200px" height="100px"></canvas>
+    <input type="button" value="drawCircle" onclick="drawCircle()" >
+
+    <script>
+        function drawLine(){
+            var canvas=document.getElementById("myCanvas")
+            var context=canvas.getContext("2d");
+            context.moveTo(0,0);
+            context.lineTo(200,100);
+            context.stroke();
+
+            context.moveTo(200,0);
+            context.lineTo(0,100);
+            context.stroke();
+
+            context.moveTo(100,0);
+            context.lineTo(100,100);
+            context.stroke();
+
+            context.moveTo(0,50);
+            context.lineTo(200,50);
+            context.stroke();
+        }
+        function drawCircle(){
+            var canvas=document.getElementById("circle");
+        var context=canvas.getContext("2d");
+        context.beginPath();
+        context.arc(100,50,50,0,2*Math.PI);
+        context.stroke();
+        }
+    </script>
+
+</body>
+</html>

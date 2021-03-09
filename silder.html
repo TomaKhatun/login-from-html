@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            border: solid;
+            padding: 10px;
+        }
+        img{
+            vertical-align: middle;
+            width: 100%;
+            height: 600px;
+        }
+        .slideimg{
+            position: relative;
+            margin: auto;
+        
+        }
+        .numbertext{
+            color: red;
+            font-size: xx-large;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="slideimg">
+            <div class="numbertext">1/3</div>
+            <img src="https://s3.envato.com/files/6a1dd92f-2857-47e1-ad41-4c7b29e3146e/inline_image_preview.jpg" alt="">
+        </div>
+
+        <div class="slideimg">
+            <div class="numbertext">2/3</div>
+            <img src="https://s3.envato.com/files/80d3eb52-16ae-4555-b249-38e19f7ecbff/inline_image_preview.jpg" alt="">
+        </div>
+
+        <div class="slideimg">
+            <div class="numbertext">3/3</div>
+            <img src="https://ak.picdn.net/shutterstock/videos/1025644553/thumb/1.jpg" alt="">
+        </div>
+    </div>
+    <br>
+    <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+    </div>
+    <script>
+        var imgIndex=0;
+        function showSlisdes(){
+            var slides=document.getElementsByClassName("slideimg");
+            var dots = document.getElementsByClassName("dot");
+        var i=0;
+
+        for(i=0; i<slides.length; i=i+1){
+            slides[i].style.display = "none";
+        }
+        slides[imgIndex].style.display = "block";
+        imgIndex=imgIndex+1;
+        if (imgIndex==3){
+            imgIndex=0;
+        }
+        setTimeout(showSlisdes,2000)
+
+        }
+
+         showSlisdes();
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find and Replace with String Methods</title>
+</head>
+
+<body>
+    <Header>
+        <h1>Find and Replace with String Methods</h1>
+    </Header>
+
+    <main>
+        <form action="#" method="post">
+            <div>
+                <label for="find">Find:</label>
+                <input type="text" id="find" />
+            </div><br>
+            <div>
+                <label for="replace">Replace:</label>
+                <input type="text" id="replace" />
+            </div><br>
+            <div>
+                <button id="btnSearch">Go</button>
+            </div>
+        </form><br>
+
+        <p class="target">
+            Lorem apple ispum dolar apple sit amet,consectetur apple adipisicing elit. <br>
+            Nihil apple laborum maxime ispum apple excritationem apple a blandities.<br>
+            Officits apple necessitatibus esse apple debitis harum apple amet apple<br> 
+            molestias sunt adipisci apple iste , voluptates apple vitae, ispum<br>
+            irue, apple odio.
+        </p>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let btn = document.getElementById('btnSearch');
+            btn.addEventListener('Click', doFindAndReplace);
+        });
+
+        function doFindAndReplace(ev) {
+            ev.PreventDefault();
+
+            let find = document.getElementById('find').value;
+            let replace = document.getElementById('replace').value;
+
+            let p = document.querySelector('.target');
+
+            while( p.textContent.indexOf(find) != -1 ){
+                p.textContent = p.textContent.replace(find, replace);
+            }
+
+    }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI CALCULATOR</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: arial;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 60px;
+            color: black;
+            background-color: red;
+            border-bottom: solid black;
+
+        }
+
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .side {
+            flex: 30%;
+            background-color: indianred;
+            padding: 20px;
+        }
+
+        .main {
+            flex: 60%;
+            background-color: tomato;
+            padding: 20px;
+        }
+
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: firebrick;
+        }
+
+
+        .side ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: crimson;
+            overflow: auto;
+        }
+
+        .side li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .side li a:active {
+            background-color: #44ccaa;
+            color: red;
+        }
+
+        .side li a:hover:not(.active) {
+            background-color: red;
+            color: yellow;
+        }
+
+        .input-area {
+            width: 400px;
+            border-radius: 5px;
+            padding: 20px;
+            background-color: orangered;
+        }
+
+        .input-area>div {
+            display: flex;
+            margin-bottom: 2.5px;
+        }
+
+        .input-area>div>div {
+            padding: 5px;
+        }
+
+        .input-label {
+            width: 70px;
+        }
+
+        .button {
+            height: 60px;
+            font-size: x-large;
+            background-color: hotpink;
+            color: black;
+            border: none;
+        }
+
+        #input-row {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Calculators</h1>
+    </div>
+
+    <div class="row">
+        <div class="side">
+            <ul>
+                <li><a class="active" href="#">BMI Calculator</a></li>
+                <li><a href="#">Age Calculator</a></li>
+                <li><a href="#">Fahrenheigt to Celsius</a></li>
+                <li><a href="#">Meters to Feet</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <h2 style="text-align: center;">Meter to Feet</h2>
+            <hr>
+            <div id="input-row">
+                <div class="input-area">
+                    <div>
+                        <div class="input-label">
+                            <label for="">Meters</label>
+                        </div>
+
+                        <div class="input">
+                            <input type="number" id="txt-meters">
+
+                        </div>
+
+                        <div class="input">
+                            <button class="button" onclick="calculate()"><i class="fa fa-calculator"></i>Meters to
+                                Feet</button>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="result">
+                Feet: <input type="text" id="meter">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>&copy; 2021</h2>
+    </div>
+
+    <script>
+        function calculate() {
+
+            var meter = document.getElementById("txt-meters").value;
+
+            var meterFloat = parseFloat(meter);
+
+            var meter = meterFloat * 3.2808;
+
+            document.getElementById("meter").value = meter;
+
+        }
+    </script>
+
+</body>
+
+</html>

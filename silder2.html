@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture</title>
+    <style>
+        #container {
+            border: 2px solid red;
+            padding: 20px;
+        }
+        img{
+            vertical-align: middle;
+            width: 100%;
+            height: 550px;
+            border: 2px solid green;
+        }
+        .slideimg{
+            margin: auto;
+            position: relative;
+        }
+        .numberText{
+            position: absolute;
+            color: red;
+            top: 50%;
+            left: 50%;
+            font-size: 60px;
+            text-shadow: 2px 2px black;
+
+        }
+        .dot{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: gold;
+            margin: 0px;
+            display: inline-block;
+            transition: background-color 0.20s ease;
+        }
+        .active {
+            background-color: red;
+
+        }
+        :hover {
+            color: black;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="slideimg">
+            <div class="numberText">Picture 1</div>
+            <img src="https://pix10.agoda.net/hotelImages/2572060/0/a9ebb03ed89160adbb197d22c13ca7c4.jpg" alt="">
+
+        </div>
+        <div class="slideimg">
+            <div class="numberText">Picture 2</div>
+            <img src="https://twiggsrealty.com/wp-content/uploads/2020/03/home03.jpg" alt="">
+
+        </div>
+        <div class="slideimg">
+            <div class="numberText">Picture 3</div>
+            <img src="https://i.pinimg.com/564x/c9/aa/f8/c9aaf8853557c381c80ee827db0dad64.jpg" alt="">
+
+        </div>
+        <div class="slideimg">
+            <div class="numberText">Picture 4</div>
+            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/brewster-mcleod-architects-1486154143.jpg" alt="">
+
+        </div>
+        <div class="slideimg">
+            <div class="numberText">Picture 5</div>
+            <img src="https://cdn.houseplansservices.com/product/vc3b4lqo3k1qdggh7i16tgp3bm/w800x533.jpg?v=12" alt="">
+
+        </div>
+
+    </div><br><br>
+    <div style="text-align: center;">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+    </div>
+    <script>
+        var imgIndex =0;
+        function showSlisdes(){
+            var slides = document.getElementsByClassName("slideimg");
+            var dots = document.getElementsByClassName("dot")
+
+            var i=0;
+            for(i=0; i<slides.length; i=i+1){
+                slides[i].style.display ="none";
+            }
+            for(i=0; i<dots.length; i=i+1){
+                dots[i].className=dots[i].className.replace("active","");
+            }
+         
+        slides[imgIndex].style.display = "block";
+        dots[imgIndex].className += " active";
+        
+        imgIndex=imgIndex+1;
+        if (imgIndex==5){
+        imgIndex=0;
+    }
+    setTimeout(showSlisdes,2000);
+    }
+    showSlisdes();
+    </script>
+</body>
+
+</html>
